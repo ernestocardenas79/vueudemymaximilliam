@@ -1,0 +1,23 @@
+{
+  "name": "vuemaxi",
+  "version": "1.0.0",
+  "description": "https://github.com/ernestocardenas79/vueudemymaximilliam.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ernestocardenas79/vueudemymaximilliam.git"
+  },
+  "keywords": [
+    "vue",
+    "uemy"
+  ],
+  "author": "Ernesto Cardenas Llanes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ernestocardenas79/vueudemymaximilliam/issues"
+  },
+  "homepage": "https://github.com/ernestocardenas79/vueudemymaximilliam#readme"
+}
