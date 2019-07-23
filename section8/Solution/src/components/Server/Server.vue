@@ -1,22 +1,23 @@
 <template>
-    <span @click="showServer()">Server {{info.id}} Status {{info.status}} </span>
+  <li
+    class="list-group-item"
+    style="cursor:pointer"
+    @click="serverSelected"
+  >Server {{server.id}} Status {{server.status}}</li>
 </template>
 
 <script>
-import { ServiceBus} from '../../main';
+import { ServerBus } from "../../main";
 
 export default {
-    props:{
-        info: Object
-    },
-    methods:{
-        showServer(){
-            ServiceBus.$emit('serverSelected', this.info);
-        }
+  props: ["server"],
+  methods: {
+    serverSelected() {
+      ServerBus.$emit("serverSelected", this.server);
     }
-}
+  }
+};
 </script>
 
 <style>
-
 </style>

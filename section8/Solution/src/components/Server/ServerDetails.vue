@@ -1,24 +1,30 @@
 <template>
-    <div class="col-xs-12 col-sm-6">
-        <p v-if="serverDetail">Server {{serverDetail.id}} satus is {{serverDetail.status}}</p>
-        <button @click="changeStatus()" > Change Status</button>
-    </div>
-
+  <div class="col-xs-12 col-sm-6">
+    <p v-if="server">Server #{{server.id}} satus is {{server.status}}</p>
+    <button @click="resetStatus">Change Status</button>
+  </div>
 </template>
 
 <script>
-import { ServiceBus} from '../../main';
+import { ServerBus } from "../../main";
 export default {
-    props:{serverDetail:null}
-    ,
-    methods:{
-        changeStatus(){
-            ServiceBus.changeStatusfn({id:ServiceBus.serverSelected.id, status:'Normal'});
-        }
-    },
-}
+  data: function() {
+    return {
+      server: null
+    };
+  },
+  methods: {
+    resetStatus() {
+      this.server.status = "Normal";
+    }
+  },
+  created() {
+    ServerBus.$on("serverSelected", server => {
+      this.server = server;
+    });
+  }
+};
 </script>
 
 <style>
-
 </style>
