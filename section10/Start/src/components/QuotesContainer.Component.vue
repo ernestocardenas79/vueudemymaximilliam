@@ -41,6 +41,7 @@ export default {
 <style scoped>
     .quote{
         display: inline-block;
-        margin:5px 10px;
+        margin: auto;
+
     }
 </style>
